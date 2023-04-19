@@ -1,0 +1,14 @@
+{% extends 'partials/esqueleto.html' %}
+
+{% load static %}
+
+{% block poemas %}
+{% for poema in poema_list %}
+            <div class="tarjeta">
+                <img src="{{ poema.img.url }}" alt="Poema 1">
+                <h3>{{poema.titulo}}</h3>
+                <p>{{poema.descripción}}</p>
+                <a href="{% url 'amor:poema_detail' poema.id %}" class="btn">Leer Más</a>    
+            </div>
+{% endfor %}
+{% endblock  %}
